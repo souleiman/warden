@@ -10,7 +10,7 @@ import (
 )
 
 var usage string = `Usage:
-	test -u <url>
+	parser -u <url>
 
 -u, --url   The resource URL`
 
