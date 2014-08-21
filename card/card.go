@@ -52,6 +52,6 @@ type Card struct {
 }
 
 type Ruling struct {
-	Date string`json:"date"`
-	Text string`json:"text"`
+	Date string`json:"date"` //When the rule was set (YYYY-MM-DD)
+	Text string`json:"text"` //The rule defined
 }
