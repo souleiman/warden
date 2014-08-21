@@ -10,9 +10,10 @@ import (
 )
 
 var usage string = `Usage:
-	parser -u <url>
+	parser [-a] -u <url>
 
--u, --url   The resource URL`
+-u, --url   The resource URL
+-a   Process every set`
 
 func main() {
 	args, _ := docopt.Parse(usage, nil, true, "Sampler 0.1", true)
@@ -25,11 +26,13 @@ func main() {
 	body, _ := ioutil.ReadAll(request.Body)
 	fmt.Println("Resource has been fetched, processing...")
 
-	var sets map[string]card.Set
-	err := json.Unmarshal(body, &sets)
-
-	for _, set := range sets {
-		set.Transform()
+	var err error
+	if args["-a"].(bool) {
+		var sets map[string]card.Set
+		err = json.Unmarshal(body, &sets)
+	} else {
+		var set card.Set
+		err = json.Unmarshal(body, &set)
 	}
 
 	fmt.Println(err)
