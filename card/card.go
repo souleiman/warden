@@ -1,8 +1,9 @@
 package card
 
 type Card struct {
-	Id            *int`json:"multiverseid"`             //The multiverseid of the card on Wizard's Gatherer web page.
+	Id            int`json:"multiverseid"`              //The multiverseid of the card on Wizard's Gatherer web page.
 	Name          string`json:"name"`                   //The card name. For split, double-faced and flip cards, just the name of one side of the card.
+	Ascii         string`json:"ascii"`                  //The card name in ASCII format
 	Names         *[]string`json:"names"`               //Only used for split, flip and dual cards. Will contain all the names on this card, front or back.
 	image         *string`json:"imageName"`             //The mtgimage.com file name for this card.
 	Type          string`json:"type"`                   // The card type. This is the type you would see on the card if printed today. Uses UTF-8 u"\u2014"
@@ -24,8 +25,8 @@ type Card struct {
 	Rulings       *[]Ruling`json:"rulings"`             //Each Ruling object has 'date' and 'text' keys.
 	Printings     *[]string`json:"printings"`           //The sets that this card was printed in.
 
-	OriginalText  *string`json:"originalText"`          //The original text on the card at the time it was printed. (Used for Lands)
-	OriginalType  *string`json:"originalType"`          //The original type on the card at the time it was printed. (Used for Tokens)
+	OriginalText  *string`json:"originalText"` //The original text on the card at the time it was printed. (Used for Lands)
+	OriginalType  *string`json:"originalType"` //The original type on the card at the time it was printed. (Used for Tokens)
 }
 
 type Ruling struct {

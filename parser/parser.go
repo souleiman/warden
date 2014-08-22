@@ -30,9 +30,14 @@ func main() {
 	if args["-a"].(bool) {
 		var sets map[string]card.Set
 		err = json.Unmarshal(body, &sets)
+
+		for _, set := range sets {
+			set.Clean()
+		}
 	} else {
 		var set card.Set
 		err = json.Unmarshal(body, &set)
+		set.Clean()
 	}
 
 	fmt.Println(err)
