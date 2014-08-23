@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS CARD_SUPERTYPE (
+  card_id SERIAL REFERENCES CARD (id),
+  supertype_id SERIAL REFERENCES SUPERTYPE (id),
+
+  PRIMARY KEY (card_id, supertype_id)
+)

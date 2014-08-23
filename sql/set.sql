@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS SET (
+  id       SERIAL PRIMARY KEY,
+  name     VARCHAR(128) UNIQUE NOT NULL,
+  code     VARCHAR(32) UNIQUE  NOT NULL,
+  type     VARCHAR(32),
+  released DATE                NOT NULL
+)

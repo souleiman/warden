@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS PRINT (
+  card_id SERIAL REFERENCES CARD (id),
+  set_id SERIAL REFERENCES SET (id),
+
+  PRIMARY KEY (card_id, set_id)
+)
