@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"encoding/json"
 	"fmt"
+	kard "github.com/souleiman/warden/card"
 )
 
 func Parse(url string, all bool) {
@@ -18,15 +19,20 @@ func Parse(url string, all bool) {
 	var err error
 	if all {
 		var sets map[string]set
+		var conv_sets []kard.Set
+
 		err = json.Unmarshal(body, &sets)
 
 		for _, set := range sets {
-			set.Clean()
+			set.clean()
+			conv_sets = append(conv_sets, set.convert())
 		}
 	} else {
 		var set set
 		err = json.Unmarshal(body, &set)
-		set.Clean()
+		conv_set := set.convert()
+		fmt.Println(conv_set)
+		set.clean()
 	}
 
 	fmt.Println(err)
