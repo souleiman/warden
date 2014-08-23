@@ -12,7 +12,7 @@ var usage string = `Usage:
 -a   Process every set`
 
 func main() {
-	args, _ := docopt.Parse(usage, nil, true, "Sampler 0.1", true)
+	args, _ := docopt.Parse(usage, nil, true, "Warden 0.1", true)
 	var url string = args["<url>"].(string)
 
 	parser.Parse(url, args["-a"].(bool))
