@@ -22,7 +22,6 @@ func Parse(url string, all bool) {
 
 		for _, set := range sets {
 			set.Clean()
-			fmt.Println(set.Cards)
 		}
 	} else {
 		var set set
