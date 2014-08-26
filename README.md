@@ -9,7 +9,7 @@ Requirements
 * unidecode
 
 ## Installation
-        # To pull the project from github easily
+        # Use go get to install warden
         go get github.com/souleiman/warden
 
 Usage
