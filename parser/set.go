@@ -24,3 +24,10 @@ func (s set) convert() kard.Set {
 	}
 	return conv_set
 }
+
+func (s set) process() {
+	s.clean()
+	w := s.convert().CreateWriter()
+	w.WriteToDatabase()
+	w.Close()
+}
