@@ -10,7 +10,7 @@ Requirements
 
 ## Installation
         # To pull the project from github easily
-        go get github.com/souleiman/seesaw
+        go get github.com/souleiman/warden
 
 Usage
 ------------
