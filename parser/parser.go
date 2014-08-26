@@ -30,9 +30,8 @@ func Parse(url string, all bool) {
 	} else {
 		var set set
 		err = json.Unmarshal(body, &set)
-		conv_set := set.convert()
-		fmt.Println(conv_set)
 		set.clean()
+		//conv_set := set.convert()
 	}
 
 	fmt.Println(err)
