@@ -11,7 +11,3 @@ type Set struct {
 	BaseSet
 	Cards       []Card`json:"cards"` // The cards in the set in Object format
 }
-
-func (s Set) CreateWriter() writer {
-	return writer{set: s}
-}

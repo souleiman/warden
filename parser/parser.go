@@ -21,12 +21,12 @@ func Parse(url string, all bool) {
 		err = json.Unmarshal(body, &sets)
 
 		for _, s := range sets {
-			s.process()
+			s.clean()
 		}
 	} else {
 		var s set
 		err = json.Unmarshal(body, &s)
-		s.process()
+		s.clean()
 	}
 
 	fmt.Println(err)
